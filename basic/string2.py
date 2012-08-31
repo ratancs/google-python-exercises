@@ -58,14 +58,26 @@ def front_back(a, b):
   la=len(a)
   lb=len(b)
   if la%2 == 0:
-    c=a[:la/2]
+    c=a[:la/2-1]
     d=a[la/2:]
+    if lb%2==0:
+      e=b[:lb/2-1]
+      f=b[lb/2:]
+    else :
+      lb=lb/2
+      lb=lb-lb%1
   else :
     la=la/2
-    la=la-la/10
-  print la
-  print d
-  return
+    la=la-la%1
+    if lb%2==0:
+      e=b[:lb/2-1]
+      f=b[lb/2:]
+    else :
+      lb=lb/2
+      lb=lb-lb%1
+
+  return c+e+d+f
+ 
 
 
 # Simple provided test() function used in main() to print
